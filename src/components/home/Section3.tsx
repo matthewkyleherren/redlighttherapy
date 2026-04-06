@@ -32,7 +32,6 @@ export function Section3() {
         <div
           id="section3Video"
           className="w-full h-full section3Video"
-          style={{ position: 'relative', overflow: 'hidden' }}
         >
           {SECTION_3_PHOTOS.map((photo, i) => (
             <img

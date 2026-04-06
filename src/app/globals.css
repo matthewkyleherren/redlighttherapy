@@ -849,7 +849,6 @@ button:focus-visible,
   margin-left: 0.1em;
   margin-right: 0.1em;
 }
-
 .header3Title {
   font-size: clamp(2rem, 2.7vw, 3.7rem);
   max-width: 800px;
