@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ShareSection } from '@/components/stories/ShareSection';
@@ -21,6 +22,20 @@ const STORIES = [
 
 export function generateStaticParams() {
   return STORIES.map((story) => ({ slug: story.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const story = STORIES.find((s) => s.slug === slug);
+  if (!story) return {};
+  return {
+    title: story.title,
+    description: `${story.title} - ${story.date}`,
+  };
 }
 
 function SocialSidebar() {
