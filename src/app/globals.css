@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  /* Hero image bg is pure #000 — to revert, change this back to #0D0D0D */
+  --color-bg-hero: #000;
   --color-bg: #0D0D0D;
   --color-text: #F0EBE6;
   --color-text-muted: #9A9087cc;
@@ -34,6 +36,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+/* Landing page only: match hero image black bg for seamless transition.
+   To revert: delete this rule or change --color-bg-hero to #0D0D0D */
+body:has(.homeSection1) {
+  background: var(--color-bg-hero);
 }
 
 /* ===== SHARED LAYOUT CLASSES ===== */
@@ -405,6 +412,7 @@ button:focus-visible,
 
 /* Home-page-specific section1 hero */
 .homeSection1 {
+  position: relative;
   opacity: 1;
   height: 100vh;
   min-height: unset;
@@ -415,31 +423,58 @@ button:focus-visible,
   overflow: hidden;
   background-color: #000;
 }
-.homeSection1:before {
-  content: "";
+/* Hero image zoom animation */
+@keyframes heroZoomDesktop {
+  0% {
+    transform: scale(0.35);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes heroZoomMobile {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+.section1HeroImage {
   position: absolute;
   inset: 0;
-  background-image: var(--section1-poster-url);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 1;
-  transition: opacity 0.2s ease;
-  pointer-events: none;
-  z-index: 0;
-}
-.homeSection1.section1PosterHidden:before {
-  opacity: 0;
-}
-.homeSection1 .section1Video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
   z-index: 1;
-  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.section1HeroImg {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: scale(0.35);
+  opacity: 0;
+  animation: heroZoomDesktop 4s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s forwards;
+}
+@media (max-width: 1024px) {
+  .section1HeroImg {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(0.3);
+    animation: heroZoomMobile 4s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s forwards;
+  }
 }
 .homeSection1 .section1Content {
   position: relative;
@@ -451,7 +486,7 @@ button:focus-visible,
   flex-direction: column;
   justify-content: flex-end;
   overflow: visible;
-  pointer-events: none;
+  z-index: 3;
 }
 .homeSection1 .section1Header {
   width: 100%;
@@ -461,7 +496,6 @@ button:focus-visible,
   padding-bottom: 7vh;
   z-index: 1;
   overflow: visible;
-  pointer-events: none;
 }
 .section1HeaderGradient {
   position: absolute;
@@ -470,8 +504,9 @@ button:focus-visible,
   right: 0;
   width: 100%;
   height: 50vh;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.75) 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
   pointer-events: none;
+  z-index: 2;
 }
 .section1HeaderButtons {
   display: flex;
@@ -479,8 +514,8 @@ button:focus-visible,
   align-items: center;
   gap: 1rem;
   pointer-events: auto;
-  opacity: 0;
-  transform: translateY(8vh);
+  opacity: 1;
+  transform: none;
 }
 .section1HeaderLeft {
   display: flex;
@@ -507,7 +542,7 @@ button:focus-visible,
 }
 .homeSection1 .section1Title {
   text-align: left;
-  opacity: 0;
+  opacity: 1;
 }
 .section1TitleItalic {
   margin-right: 0.02em;
@@ -519,7 +554,7 @@ button:focus-visible,
   padding-left: 0;
   padding-right: 0;
   color: #fffffff0;
-  opacity: 0.01;
+  opacity: 1;
 }
 .homeSection1 .section1Description > div {
   text-align: left !important;

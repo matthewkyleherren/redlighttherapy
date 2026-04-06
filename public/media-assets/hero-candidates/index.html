@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Image Candidates — BetterAtRed</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0a0a; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif; }
+  header { padding: 40px 48px 24px; border-bottom: 1px solid #222; }
+  header h1 { font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; font-weight: 400; }
+  header p { font-size: 28px; font-weight: 300; margin-top: 8px; color: #fff; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; padding: 2px; }
+  .card { position: relative; overflow: hidden; cursor: pointer; background: #111; }
+  .card.hero { grid-column: 1 / -1; }
+  .card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+  .card.hero img { max-height: 85vh; }
+  .card:not(.hero) img { height: 480px; }
+  .card:hover img { transform: scale(1.02); }
+  .card-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 32px 28px 24px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%); }
+  .card-label .badge { display: inline-block; background: #c0392b; color: #fff;
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px;
+    border-radius: 2px; margin-bottom: 10px; font-weight: 600; }
+  .card-label .badge.alt { background: #444; }
+  .card-label h2 { font-size: 20px; font-weight: 300; line-height: 1.3; }
+  .card-label p { font-size: 13px; color: #aaa; margin-top: 6px; line-height: 1.5; }
+  .card-label .meta { margin-top: 12px; display: flex; gap: 16px; }
+  .card-label .meta a { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; }
+  .card-label .meta a:hover { border-color: #fff; }
+  .note { padding: 48px; max-width: 900px; }
+  .note h3 { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #666; margin-bottom: 16px; }
+  .note p { font-size: 15px; color: #aaa; line-height: 1.7; }
+  .note p + p { margin-top: 12px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>BetterAtRed · Zurich</h1>
+  <p>Hero Image Candidates</p>
+</header>
+
+<div class="grid">
+
+  <!-- #1 — RECOMMENDED -->
+  <div class="card hero">
+    <img src="1_pod-portrait.jpg" alt="Woman inside red light therapy pod">
+    <div class="card-label">
+      <span class="badge">★ Recommended Hero</span>
+      <h2>Inside the pod — cinematic portrait</h2>
+      <p>Woman leaning into a red light therapy capsule, face lit by the warm red glow of the panel. Dark, moody, intimate. Matches the "Enter the red." headline perfectly.</p>
+      <div class="meta">
+        <a href="1_pod-portrait.jpg" download>Download full-res (1.8 MB)</a>
+        <a href="https://unsplash.com/photos/photo-1610830944784-54a0dafdac86" target="_blank">View on Unsplash</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- #2 -->
+  <div class="card">
+    <img src="2_editorial-mask.jpg" alt="Model holding red LED face mask">
+    <div class="card-label">
+      <span class="badge alt">#2 — Editorial</span>
+      <h2>Model with LED mask — luxury editorial</h2>
+      <p>Elegant model in green dress holding a red LED face mask. Very aspirational, high-fashion feel. Strong luxury positioning.</p>
+      <div class="meta">
+        <a href="2_editorial-mask.jpg" download>Download full-res (946 KB)</a>
+        <a href="https://unsplash.com/photos/photo-1710839422734-de9f105bfce0" target="_blank">View on Unsplash</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- #3 -->
+  <div class="card">
+    <img src="3_light-on-face.jpg" alt="Red light on face against blue background">
+    <div class="card-label">
+      <span class="badge alt">#3 — Artistic</span>
+      <h2>Red light on skin — blue/red contrast</h2>
+      <p>Dramatic colour contrast: blue-lit face with a red light device on the cheek. Evocative, modern, tech-forward aesthetic.</p>
+      <div class="meta">
+        <a href="3_light-on-face.jpg" download>Download full-res (510 KB)</a>
+        <a href="https://unsplash.com/photos/photo-1589304402908-f49bf0765ad2" target="_blank">View on Unsplash</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- #4 -->
+  <div class="card">
+    <img src="4_led-treatment.jpg" alt="LED face mask treatment in salon">
+    <div class="card-label">
+      <span class="badge alt">#4 — Authentic treatment</span>
+      <h2>LED treatment in salon</h2>
+      <p>Aesthetician placing an LED mask on a client. Shows the real service, clean and professional. Good for trust-building sections.</p>
+      <div class="meta">
+        <a href="4_led-treatment.jpg" download>Download full-res (680 KB)</a>
+        <a href="https://unsplash.com/photos/photo-1740350631565-6a5081a2f841" target="_blank">View on Unsplash</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- #5 -->
+  <div class="card hero">
+    <img src="5_led-panel-beam.jpg" alt="Red LED panel with light beam" style="max-height:60vh;">
+    <div class="card-label">
+      <span class="badge alt">#5 — Abstract/texture</span>
+      <h2>Red LED panel — abstract detail</h2>
+      <p>Close-up of a red LED therapy panel casting a beam. Excellent for background texture, section dividers, or a second-scroll image. Not a standalone hero but very useful.</p>
+      <div class="meta">
+        <a href="5_led-panel-beam.jpg" download>Download full-res (1.2 MB)</a>
+        <a href="https://unsplash.com/photos/photo-1710056618331-6c384da680a9" target="_blank">View on Unsplash</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="note">
+  <h3>Notes</h3>
+  <p>All photos are from <strong>Unsplash</strong> and are free under the Unsplash License for POC use. For the final production site, purchase commercial licenses from <a href="https://istock.com" style="color:#888">iStock</a> or commission a shoot — iStock has excellent purpose-built RLT studio shots.</p>
+  <p>The <strong>recommended hero (#1)</strong> pairs especially well with the dark hero section and "Enter the <em>red.</em>" headline. It's vertical/portrait which crops beautifully across breakpoints. Consider a subtle dark overlay (opacity 0.3–0.5) to ensure the white text remains legible.</p>
+</div>
+
+</body>
+</html>

@@ -2,14 +2,12 @@ import type { AnimationLibs } from '@/lib/animations/animation-libs';
 import type { CreateTimelineSection } from '@/lib/animations/section-timeline';
 import { interpolate } from '@/lib/utils/animations';
 
-const VIDEO_OPACITY = 0.8;
-
 function getSection1Elements(libs: AnimationLibs) {
   const pageHeader = document.getElementById('pageHeader');
   const section = document.getElementById('section1');
   const header = document.getElementById('section1Header');
   const title = document.getElementById('section1Title');
-  const video = document.getElementById('section1Video');
+  const heroImage = document.querySelector('.section1HeroImage') as HTMLElement | null;
   const description = document.getElementById('section1Description');
   const headerButtons = document.getElementById('section1HeaderButtons');
   if (!pageHeader) throw new Error('Page header not found');
@@ -17,7 +15,6 @@ function getSection1Elements(libs: AnimationLibs) {
   if (!header) throw new Error('Section 1 header not found');
   if (!title) throw new Error('Section 1 title not found');
   if (!description) throw new Error('Section 1 description not found');
-  if (!video) throw new Error('Section 1 video not found');
   if (!headerButtons) throw new Error('Section 1 header buttons not found');
   return {
     pageHeader,
@@ -26,7 +23,7 @@ function getSection1Elements(libs: AnimationLibs) {
     title,
     titleSplit: libs.SplitText.create(title, { type: 'words,chars' }),
     description,
-    video,
+    heroImage,
     headerButtons,
   };
 }
@@ -35,7 +32,6 @@ function initSection1(libs: AnimationLibs) {
   const elements = getSection1Elements(libs);
   if (elements.title.getAttribute('data-section1-faded-in') !== 'true') {
     const vh = window.innerHeight;
-    libs.gsap.set(elements.video, { opacity: 0 });
     libs.gsap.set(elements.title, { opacity: 0 });
     libs.gsap.set(elements.titleSplit.chars, { opacity: 0 });
     libs.gsap.set(elements.pageHeader, { opacity: 0, y: -vh * 0.1 });
@@ -48,7 +44,6 @@ export function fadeInSection1(libs: AnimationLibs, onComplete?: () => void) {
   const elements = getSection1Elements(libs);
   const vh = window.innerHeight;
   elements.title.setAttribute('data-section1-faded-in', 'true');
-  libs.gsap.set(elements.video, { opacity: 1 });
   libs.gsap.set(elements.title, { opacity: 1 });
   libs.gsap.set(elements.titleSplit.chars, { opacity: 0, filter: 'blur(8px)' });
   libs.gsap.set(elements.pageHeader, { opacity: 0, y: -vh * 0.16 });
@@ -104,11 +99,6 @@ export function fadeOutSection1Headers(libs: AnimationLibs) {
     duration: 0.3,
     ease: 'power2.inOut',
   });
-  libs.gsap.to(elements.video, {
-    opacity: 1,
-    duration: 0.3,
-    ease: 'power2.inOut',
-  });
 }
 
 export function fadeInSection1Headers(libs: AnimationLibs) {
@@ -123,11 +113,6 @@ export function fadeInSection1Headers(libs: AnimationLibs) {
   libs.gsap.to(elements.header, {
     opacity: 1,
     y: 0,
-    duration,
-    ease: 'power2.inOut',
-  });
-  libs.gsap.to(elements.video, {
-    opacity: VIDEO_OPACITY,
     duration,
     ease: 'power2.inOut',
   });
@@ -149,16 +134,16 @@ export const createSection1: CreateTimelineSection = (libs) => {
           libs.gsap.set(elements.section, { opacity });
         },
       },
-      {
-        id: 'video-pan',
+      ...(elements.heroImage ? [{
+        id: 'hero-pan',
         start: 0,
         end: 100,
-        update: (progress) => {
+        update: (progress: number) => {
           const vh = window.innerHeight;
           const y = interpolate(0, vh * 0.5, progress);
-          libs.gsap.set(elements.video, { y });
+          libs.gsap.set(elements.heroImage, { y });
         },
-      },
+      }] : []),
     ],
   };
 };

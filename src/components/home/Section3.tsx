@@ -2,7 +2,28 @@
 
 import Link from 'next/link';
 
-const SECTION_3_VIDEO_PLAYBACK_ID = 'hy3IUy2Ew8G37L3zxEt01b4G50047KEeBhCxFyki7VUmU';
+const SECTION_3_PHOTOS = [
+  {
+    src: '/media-assets/691c9715b503f65d6eacedcc_676593909481ac98d6cefd6f_Red_20Light_20Therapy_20for_20Skin__20These_20Are_20the_20Science-Backed_20Benefits-min.jpeg',
+    alt: 'Red light therapy — science-backed skin benefits',
+  },
+  {
+    src: '/media-assets/red_light_therapy_bed_1.jpg',
+    alt: 'Red light therapy pod interior',
+  },
+  {
+    src: '/media-assets/hero-candidates/1_pod-portrait.jpg',
+    alt: 'Woman inside red light therapy pod',
+  },
+  {
+    src: '/media-assets/hero-candidates/3_light-on-face.jpg',
+    alt: 'Red light on skin — blue and red contrast',
+  },
+  {
+    src: '/media-assets/691d99a8a3d14ffa7b2a9b96_20240709_Ayun_1314.jpg',
+    alt: 'Red light therapy session with goggles',
+  },
+];
 
 export function Section3() {
   return (
@@ -11,25 +32,28 @@ export function Section3() {
         <div
           id="section3Video"
           className="w-full h-full section3Video"
-          dangerouslySetInnerHTML={{
-            __html: `<mux-video
-              playback-id="${SECTION_3_VIDEO_PLAYBACK_ID}"
-              stream-type="on-demand"
-              metadata-video-title="Home section 3 video"
+          style={{ position: 'relative', overflow: 'hidden' }}
+        >
+          {SECTION_3_PHOTOS.map((photo, i) => (
+            <img
+              key={photo.src}
+              id={`section3Photo${i}`}
+              src={photo.src}
+              alt={photo.alt}
               aria-hidden="true"
-              class="w-full h-full"
-              style="--media-object-fit: cover; --media-object-position: center"
-              tabindex="-1"
-              autoplay="true"
-              muted="true"
-              loop="true"
-              min-resolution="720p"
-              max-resolution="2160p"
-              preload="none"
-              playsinline="true"
-            ></mux-video>`,
-          }}
-        />
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+                opacity: i === 0 ? 1 : 0,
+                transition: 'none',
+              }}
+            />
+          ))}
+        </div>
         <p id="section3BeliefsTitle" className="section3BeliefsTitle">Science reveals</p>
         <div id="section3Text" className="section3Text">
           <div id="section3TextItems" className="section3TextItems">

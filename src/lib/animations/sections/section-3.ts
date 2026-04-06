@@ -18,7 +18,10 @@ function getSection3Elements(libs: AnimationLibs) {
   if (!textItems) throw new Error('Section 3 text items not found');
   if (!textItemsArray) throw new Error('Section 3 text items array not found');
   if (!section2Cards) throw new Error('Section 2 cards not found');
-  return { section, content, video, textContainer, textItems, textItemsArray, section2Cards };
+  const photos = [0, 1, 2, 3, 4]
+    .map((i) => document.getElementById(`section3Photo${i}`))
+    .filter(Boolean) as HTMLElement[];
+  return { section, content, video, textContainer, textItems, textItemsArray, section2Cards, photos };
 }
 
 function getVideoWidth(section2Cards: HTMLElement) {
@@ -101,14 +104,10 @@ function getSnappedY(progress: number, snapPositions: number[]): number {
 export const createSection3: CreateTimelineSection = (libs) => {
   const elements = initSection3(libs);
   const vph = (100 * 100) / (325 + 100);
-  let isPlaying = false;
   let currentScrollProgress = 0;
   window.addEventListener('resize', () => {
     if (currentScrollProgress < vph / 3 || currentScrollProgress > 100 - vph) elements.resize();
   });
-
-  // Get the mux-video element inside the wrapper div
-  const muxVideo = elements.video.querySelector('mux-video') as HTMLElement & { play: () => Promise<void>; pause: () => void } | null;
 
   return {
     id: 'section3',
@@ -120,25 +119,6 @@ export const createSection3: CreateTimelineSection = (libs) => {
         end: vph,
         update: (progress) => {
           currentScrollProgress = progress;
-        },
-      },
-      {
-        id: 'fadeInVideo',
-        start: 0,
-        end: vph / 2,
-        update: (progress) => {
-          if (progress < 0.05) {
-            if (!isPlaying) return;
-            if (muxVideo && typeof muxVideo.pause === 'function') muxVideo.pause();
-            isPlaying = false;
-          } else {
-            if (isPlaying) return;
-            if (muxVideo && typeof muxVideo.play === 'function') {
-              const p = muxVideo.play();
-              if (p && typeof p.catch === 'function') p.catch(() => undefined);
-            }
-            isPlaying = true;
-          }
         },
       },
       {
@@ -172,6 +152,28 @@ export const createSection3: CreateTimelineSection = (libs) => {
           const y = getSnappedY(progress, snapPositions);
           libs.gsap.set(elements.textItems, { y });
           updateTextItemsStyles(libs, elements.textContainer, elements.textItemsArray);
+
+          // Crossfade photos in sync with text snaps
+          if (elements.photos.length > 0) {
+            const n = elements.photos.length;
+            const clamped = Math.max(0, Math.min(1, progress));
+            const rawIndex = clamped * (n - 1);
+            const lowerIndex = Math.floor(rawIndex);
+            const upperIndex = Math.min(lowerIndex + 1, n - 1);
+            // Use snapEase so photos hold steady at each snap point
+            // and transition quickly between them
+            const t = snapEase(rawIndex - lowerIndex);
+            elements.photos.forEach((photo, i) => {
+              let opacity = 0;
+              if (lowerIndex === upperIndex) {
+                opacity = i === lowerIndex ? 1 : 0;
+              } else {
+                if (i === lowerIndex) opacity = 1 - t;
+                else if (i === upperIndex) opacity = t;
+              }
+              libs.gsap.set(photo, { opacity });
+            });
+          }
         },
       },
       {

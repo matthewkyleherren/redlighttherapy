@@ -14,10 +14,10 @@ function ArrowIcon() {
 
 const CARDS = [
   {
-    image: '/images/founders.jpg',
+    image: '/media-assets/salt-light.jpg',
     alt: 'Individual red light session',
-    width: 1100,
-    height: 1688,
+    width: 1920,
+    height: 1280,
     badge: 'Individual Sessions',
     title: 'The eleven-minute ritual.',
     about: 'Full-body immersion in 630nm, 660nm, and 850nm light. Guided mindfulness included. From CHF 33.',
@@ -25,10 +25,10 @@ const CARDS = [
     href: '/sessions',
   },
   {
-    image: '/images/memberships-grok.jpg',
+    image: '/media-assets/199-6_red-light-therapy-mito-light-5.jpg',
     alt: 'red. unlimited membership',
-    width: 1100,
-    height: 1190,
+    width: 1920,
+    height: 1280,
     badge: 'Membership',
     title: 'Unlimited. CHF 222.',
     about: 'No credits. No booking friction. Just show up whenever your body asks — and it will.',
