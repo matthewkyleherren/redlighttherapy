@@ -30,29 +30,29 @@ export function Section3() {
             ></mux-video>`,
           }}
         />
-        <p id="section3BeliefsTitle" className="section3BeliefsTitle">We believe in</p>
+        <p id="section3BeliefsTitle" className="section3BeliefsTitle">Science reveals</p>
         <div id="section3Text" className="section3Text">
           <div id="section3TextItems" className="section3TextItems">
             <p className="section3TextItem">
-              Backing founders who <span className="section3TextItemItalic">bend reality.</span>
+              Light that penetrates <span className="section3TextItemItalic">50mm</span> beneath your skin.
             </p>
             <p className="section3TextItem">
-              People who think impossible is an <span className="section3TextItemItalic">opinion.</span>
+              Mitochondria producing <span className="section3TextItemItalic">more ATP energy.</span>
             </p>
             <p className="section3TextItem">
-              Choosing <span className="section3TextItemItalic">courage</span> over comfort.
+              Recovery that happens <span className="section3TextItemItalic">while you rest.</span>
             </p>
             <p className="section3TextItem">
-              <span className="section3TextItemItalic">Refusing</span> to accept the world that was given to us.
+              Collagen that <span className="section3TextItemItalic">rebuilds itself.</span>
             </p>
             <p className="section3TextItem">
-              <span className="section3TextItemItalic">Longevity</span> over hype.
+              A mind that thinks <span className="section3TextItemItalic">more clearly.</span>
             </p>
           </div>
         </div>
         <div className="glass btn-wrapper section3Button">
-          <Link href="/manifesto" className="btn-component btn-glass button-md">
-            <span className="btn-title">Read our manifesto</span>
+          <Link href="/science" className="btn-component btn-glass button-md">
+            <span className="btn-title">Explore the science</span>
             <span className="btn-icon btn-icon-right">
               <svg className="-mr-1" width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

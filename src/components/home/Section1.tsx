@@ -74,7 +74,7 @@ export function Section1() {
         <div id="section1Header" className="header section1Header">
           <div className="section1HeaderLeft">
             <h1 id="section1Title" className="title section1Title">
-              Your<span id="section1TitleItalic" className="titleItalic section1TitleItalic">legacy,</span> made.
+              Enter the<span id="section1TitleItalic" className="titleItalic section1TitleItalic">red.</span>
             </h1>
           </div>
           <div className="section1HeaderRight">
@@ -91,15 +91,15 @@ export function Section1() {
                         />
                       </svg>
                     </span>
-                    <span className="btn-title">Watch the film</span>
+                    <span className="btn-title">Book a session</span>
                   </button>
                 </div>
                 <Link
-                  href="/founders/submit"
+                  href="/membership"
                   id="section1HeaderRightButton2"
                   className="btn-component btn-default button-sm"
                 >
-                  <span className="btn-title">Build the future</span>
+                  <span className="btn-title">Join the membership</span>
                   <span className="btn-icon btn-icon-right">
                     <svg className="-mr-1" width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -110,8 +110,8 @@ export function Section1() {
               </div>
               <div className="section1DescriptionContainer">
                 <div id="section1Description" className="description section1Description">
-                  A digital family office for athletes, artists, and entrepreneurs backing
-                  companies that advance humanity.
+                  Zurich&apos;s first red light therapy studio. Cellular
+                  recovery, collagen, clarity — in eleven minutes.
                 </div>
               </div>
             </div>

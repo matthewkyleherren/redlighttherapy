@@ -8,14 +8,14 @@ export function Section4() {
     <div id="section4" className="section section4">
       <div id="section4Header" className="header section4Header">
         <h1 id="section4Subtitle" className="subtitle section4Subtitle">
-          We bring value to founders <span className="titleItalic section4SubtitleItalic">beyond</span> capital.
+          Guests arrive <span className="titleItalic section4SubtitleItalic">sceptical.</span> They come back.
         </h1>
         <div id="section4Description" className="description section4Description">
-          We accelerate the world&apos;s best founders with storytelling, network, influence &amp;
-          expertise.
+          Real results from real people in Zurich. Not a wellness trend.
+          A weekly practice.
         </div>
-        <Link href="/founders" id="section4Button" className="btn-component btn-default button-md">
-          <span className="btn-title">Learn more</span>
+        <Link href="/stories" id="section4Button" className="btn-component btn-default button-md">
+          <span className="btn-title">Read their stories</span>
           <span className="btn-icon btn-icon-right">
             <svg className="-mr-1" width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -29,39 +29,41 @@ export function Section4() {
         <div className="foundersColumn">
           <VideoTile
             playbackId="5attz0200T7muKz1gOropOtRnC3BTpfb2v01XvOEP4c02Pk"
-            videoTitle="Founders tile - Neil Tanna"
-            title="Neil Tanna"
-            subtitle="CEO & Co-Founder of Howbout"
-            stage="Series A"
+            videoTitle="Guest testimonial"
+            title="Guest"
+            subtitle="Zurich, regular member"
+            stage="Membership"
           />
           <div className="quoteTile">
             <div className="glass badge">
-              <span className="badgeText">Seed</span>
+              <span className="badgeText">Membership</span>
             </div>
             <blockquote className="quoteTileQuote">
-              &ldquo;Already an 11 out of 10&rdquo;
+              &ldquo;I&apos;ve tried everything — cryotherapy, IV drips, the works.
+              Red light is the one I actually feel.&rdquo;
             </blockquote>
-            <p className="quoteTileSubtitle">Founder</p>
+            <p className="quoteTileSubtitle">Zurich, regular member</p>
           </div>
         </div>
 
         <div className="foundersColumn foundersColumnReverse">
           <VideoTile
             playbackId="EUoDXDdpJ7o00KgIzYpMTwZ8x5wagSeqCzQCwjeyUJiI"
-            videoTitle="Founders tile - Max Teichert"
-            title="Max Teichert"
-            subtitle="CEO & Co-Founder of Track Titan"
-            stage="Seed"
+            videoTitle="Guest testimonial"
+            title="Guest"
+            subtitle="Zurich, weekly guest"
+            stage="22-min Session"
           />
           <div className="quoteTile">
             <div className="glass badge">
-              <span className="badgeText">Series A</span>
+              <span className="badgeText">22-min Session</span>
             </div>
             <blockquote className="quoteTileQuote">
-              &ldquo;You guys continue to be wicked, value-add investors for us. One of your superpowers is your collective
-              network.&rdquo;
+              &ldquo;The guided meditation during the session is the part
+              nobody tells you about. It&apos;s twenty minutes for your body,
+              and twenty minutes for your head.&rdquo;
             </blockquote>
-            <p className="quoteTileSubtitle">Founder</p>
+            <p className="quoteTileSubtitle">Zurich, weekly guest</p>
           </div>
         </div>
       </div>

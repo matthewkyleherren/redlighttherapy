@@ -5,29 +5,28 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'sequel | your legacy, made',
-    template: '%s | sequel',
+    default: 'red. | enter the red',
+    template: '%s | red.',
   },
   description:
-    'A digital family office for athletes, artists, and entrepreneurs backing companies that advance humanity.',
-  metadataBase: new URL('https://www.sequel.co'),
+    "Zurich's first red light therapy studio. Cellular recovery, collagen, clarity — in eleven minutes.",
+  metadataBase: new URL('https://www.betteratred.com'),
   openGraph: {
     type: 'website',
-    siteName: 'Sequel',
-    locale: 'en_GB',
+    siteName: 'red.',
+    locale: 'en_CH',
     images: [{ url: '/meta-logo.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@joinsequel',
     images: ['/meta-logo.png'],
   },
   icons: { icon: '/favicon.ico' },
   robots: { index: true, follow: true },
   other: {
-    'geo.region': 'GB-ENG',
-    'geo.placename': 'London',
-    classification: 'Investment Platform',
+    'geo.region': 'CH-ZH',
+    'geo.placename': 'Zurich',
+    classification: 'Wellness Studio',
   },
 };
 

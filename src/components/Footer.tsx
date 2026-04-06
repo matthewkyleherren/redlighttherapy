@@ -37,8 +37,8 @@ export function Footer() {
     >
       {/* Hero tagline section */}
       <div className="px-6 md:px-12 lg:px-24">
-        <h2 className="text-white text-5xl md:text-7xl lg:text-9xl font-medium tracking-tight">
-          Your <span className="italic" style={{ fontFamily: 'Bradford' }}>legacy,</span> made.
+        <h2 className="text-5xl md:text-7xl lg:text-9xl font-medium tracking-tight" style={{ color: 'var(--color-text)' }}>
+          Enter the <span className="italic" style={{ fontFamily: 'Bradford', color: 'var(--color-accent)' }}>red.</span>
         </h2>
       </div>
 
@@ -52,44 +52,34 @@ export function Footer() {
               <span className="text-white/70 text-[10px] font-sans uppercase tracking-wide">Navigation</span>
               <div className="flex flex-col gap-4">
                 <FooterLink href="/">Home</FooterLink>
-                <FooterLink href="/founders">Founders</FooterLink>
-                <FooterLink href="/stories">Stories</FooterLink>
-                <FooterLink href="/membership">Membership</FooterLink>
+                <FooterLink href="/sessions">Sessions</FooterLink>
+                <FooterLink href="/science">Science</FooterLink>
+                <FooterLink href="/about">About</FooterLink>
               </div>
             </div>
 
             {/* Company column */}
             <div className="flex flex-col gap-4">
-              <span className="text-white/80 text-[10px] font-sans uppercase tracking-wide">Company</span>
+              <span className="text-white/80 text-[10px] font-sans uppercase tracking-wide">Info</span>
               <div className="flex flex-col gap-4">
-                <FooterLink href="/manifesto" external>Manifesto</FooterLink>
-                <FooterLink href="/careers" external>Careers</FooterLink>
-                <FooterLink href="https://sigma.sequel.co/" external>Advisor access</FooterLink>
+                <FooterLink href="/membership">Membership</FooterLink>
+                <FooterLink href="/book">Gift Cards</FooterLink>
                 <FooterLink href="/privacy" external>Privacy policy</FooterLink>
               </div>
             </div>
           </div>
 
-          {/* Right side: Clocks (hidden on mobile) */}
-          <div className="hidden lg:grid grid-cols-3 gap-x-24">
+          {/* Right side: Location */}
+          <div className="hidden lg:flex flex-col gap-2">
             <Clock
-              timezone="America/Los_Angeles"
-              city="San Francisco"
-              country="United States"
-              ariaLabel="Clock showing time in San Francisco"
+              timezone="Europe/Zurich"
+              city="Zurich"
+              country="Switzerland"
+              ariaLabel="Clock showing time in Zurich"
             />
-            <Clock
-              timezone="America/New_York"
-              city="Miami"
-              country="United States"
-              ariaLabel="Clock showing time in Miami"
-            />
-            <Clock
-              timezone="Europe/London"
-              city="London"
-              country="United Kingdom"
-              ariaLabel="Clock showing time in London"
-            />
+            <p className="text-[13px] font-sans uppercase tracking-wide" style={{ color: 'var(--color-text-muted)' }}>
+              Seefeldstrasse 152, 8008 Zurich
+            </p>
           </div>
         </div>
       </div>
@@ -98,8 +88,8 @@ export function Footer() {
       <div className="px-6 md:px-12 lg:px-24 pb-12 md:pb-16">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           {/* Left: Email */}
-          <FooterLink href="mailto:members@sequel.co" external>
-            members@sequel.co
+          <FooterLink href="mailto:hello@betteratred.com" external>
+            hello@betteratred.com
           </FooterLink>
 
           {/* Center: Copyright */}

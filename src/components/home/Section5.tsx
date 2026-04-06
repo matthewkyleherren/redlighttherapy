@@ -3,10 +3,10 @@
 import { LeagueMarquee } from './LeagueMarquee';
 
 const STATS = [
-  { id: 'stat1', badge: 'Network', prefix: '', target: 300, suffix: '+', subtitle: "Of the world's best" },
-  { id: 'stat2', badge: 'Network', prefix: '', target: 25, suffix: '+', subtitle: 'World Champions' },
-  { id: 'stat3', badge: 'Members', prefix: '$', target: 20, suffix: 'bn+', subtitle: 'In exits by our members.' },
-  { id: 'stat4', badge: 'Investments', prefix: '$', target: 100, suffix: 'm', subtitle: 'Invested in venture' },
+  { id: 'stat1', badge: 'Research', prefix: '', target: 57, suffix: '+', subtitle: 'Peer-reviewed studies' },
+  { id: 'stat2', badge: 'Wavelengths', prefix: '', target: 3, suffix: '', subtitle: 'Targeted light frequencies' },
+  { id: 'stat3', badge: 'Session', prefix: '', target: 11, suffix: 'min', subtitle: 'To start feeling the difference' },
+  { id: 'stat4', badge: 'Penetration', prefix: '', target: 50, suffix: 'mm', subtitle: 'Deep into muscle and tissue' },
 ];
 
 export function Section5() {
@@ -14,11 +14,11 @@ export function Section5() {
     <div id="section5" className="section section5">
       <div id="section5Header" className="header section5Header">
         <h1 id="section5Subtitle" className="subtitle section5Subtitle">
-          From early momentum to <span className="titleItalic section5SubtitleItalic">global</span> awareness.
+          The numbers behind the <span className="titleItalic section5SubtitleItalic">ritual.</span>
         </h1>
         <div id="section5Description" className="description section5Description">
-          Our network of investors spans world-class athletes, artists, and entrepreneurs, people
-          who shape culture, shift perspective, and open doors.
+          Photobiomodulation is among the most studied non-invasive
+          therapies in modern medicine. These are some of the reasons why.
         </div>
       </div>
 

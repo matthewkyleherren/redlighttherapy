@@ -15,24 +15,24 @@ function ArrowIcon() {
 const CARDS = [
   {
     image: '/images/founders.jpg',
-    alt: 'Card image: Not just another VC',
+    alt: 'Individual red light session',
     width: 1100,
     height: 1688,
-    badge: 'Founders',
-    title: 'Not just another VC',
-    about: "We bring capital, storytelling, network, influence and expertise to the world's best founders.",
-    buttonText: 'For founders',
-    href: '/founders',
+    badge: 'Individual Sessions',
+    title: 'The eleven-minute ritual.',
+    about: 'Full-body immersion in 630nm, 660nm, and 850nm light. Guided mindfulness included. From CHF 33.',
+    buttonText: 'View sessions',
+    href: '/sessions',
   },
   {
     image: '/images/memberships-grok.jpg',
-    alt: 'Card image: Invest with the best',
+    alt: 'red. unlimited membership',
     width: 1100,
     height: 1190,
-    badge: 'Athletes, Artists & Entrepreneurs',
-    title: 'Invest with the best',
-    about: 'Access to the most coveted private investment opportunities on the planet.',
-    buttonText: 'For members',
+    badge: 'Membership',
+    title: 'Unlimited. CHF 222.',
+    about: 'No credits. No booking friction. Just show up whenever your body asks — and it will.',
+    buttonText: 'Join now',
     href: '/membership',
   },
 ];
@@ -41,9 +41,9 @@ export function Section2() {
   return (
     <div id="section2" className="section section2">
       <h1 id="section2Subtitle" className="subtitle section2Subtitle">
-        The digital family office investing in founders shaping the
-        <span id="section2SubtitleItalic" className="titleItalic section2SubtitleItalic">future</span>
-        of humanity.
+        Science-backed recovery, ritual, and
+        <span id="section2SubtitleItalic" className="titleItalic section2SubtitleItalic">renewal</span>
+        — in the heart of Zurich.
       </h1>
       <div id="section2Cards" className="section2Cards">
         {CARDS.map((card) => (
