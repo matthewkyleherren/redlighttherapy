@@ -386,15 +386,33 @@ button:focus-visible,
 
 /* ===== HOME PAGE SECTIONS ===== */
 
+/* Generic section1 (shared by all pages) */
 .section1 {
+  min-height: auto;
+  padding-top: 20vh;
+  padding-bottom: 10vh;
+}
+.section1Content {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12vh;
+}
+
+/* Home-page-specific section1 hero */
+.homeSection1 {
   opacity: 1;
   height: 100vh;
+  min-height: unset;
+  padding-top: 0;
+  padding-bottom: 0;
   display: flex;
   justify-content: flex-start;
   overflow: hidden;
   background-color: #000;
 }
-.section1:before {
+.homeSection1:before {
   content: "";
   position: absolute;
   inset: 0;
@@ -407,10 +425,10 @@ button:focus-visible,
   pointer-events: none;
   z-index: 0;
 }
-.section1.section1PosterHidden:before {
+.homeSection1.section1PosterHidden:before {
   opacity: 0;
 }
-.section1Video {
+.homeSection1 .section1Video {
   position: absolute;
   top: 0;
   left: 0;
@@ -420,17 +438,19 @@ button:focus-visible,
   z-index: 1;
   opacity: 1;
 }
-.section1Content {
+.homeSection1 .section1Content {
   position: relative;
   width: 100%;
   height: 100dvh;
+  margin: 0;
+  gap: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow: visible;
   pointer-events: none;
 }
-.section1Header {
+.homeSection1 .section1Header {
   width: 100%;
   flex-direction: row;
   align-items: flex-end;
@@ -482,7 +502,7 @@ button:focus-visible,
 #section1HeaderRightButton2 {
   display: none;
 }
-.section1Title {
+.homeSection1 .section1Title {
   text-align: left;
   opacity: 0;
 }
@@ -490,7 +510,7 @@ button:focus-visible,
   margin-right: 0.02em;
   margin-left: 0.25em;
 }
-.section1Description {
+.homeSection1 .section1Description {
   text-align: left;
   max-width: 320px;
   padding-left: 0;
@@ -498,7 +518,7 @@ button:focus-visible,
   color: #fffffff0;
   opacity: 0.01;
 }
-.section1Description > div {
+.homeSection1 .section1Description > div {
   text-align: left !important;
 }
 .homeVideoControlsContainer {
@@ -1557,30 +1577,30 @@ button:focus-visible,
     text-align: center;
   }
 
-  .section1Header {
+  .homeSection1 .section1Header {
     flex-direction: column;
     align-items: center;
     padding: 3vh;
   }
-  .section1HeaderGradient {
+  .homeSection1 .section1HeaderGradient {
     height: 70vh;
     background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
   }
-  .section1HeaderLeft {
+  .homeSection1 .section1HeaderLeft {
     overflow: hidden;
   }
-  .section1Title,
-  .section1Description {
+  .homeSection1 .section1Title,
+  .homeSection1 .section1Description {
     text-align: center;
   }
-  .section1Description > div {
+  .homeSection1 .section1Description > div {
     text-align: center !important;
   }
-  .section1HeaderRightContent {
+  .homeSection1 .section1HeaderRightContent {
     flex-direction: column-reverse;
     align-items: center;
   }
-  #section1HeaderRightButton2 {
+  .homeSection1 #section1HeaderRightButton2 {
     display: flex;
   }
   .section2 {
@@ -2564,6 +2584,7 @@ body.founders-reduced-motion .cursorTrailImage {
   margin-bottom: 3vh;
   max-width: 1000px;
   opacity: 0.01;
+  font-size: clamp(2rem, 2.7vw, 3.7rem);
 }
 
 .storiesSection1TitleItalic {

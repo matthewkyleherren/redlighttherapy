@@ -28,7 +28,9 @@ export function MembershipSection2() {
         {STATS.map((stat, i) => (
           <div key={stat.badge} id={`membershipStat${i + 1}`} className="membershipStat">
             <div className="membershipStatContent">
-              <span className="membershipStatBadgeText">{stat.badge}</span>
+              <div className="glass badge statBadge">
+                <span className="badgeText">{stat.badge}</span>
+              </div>
             </div>
             <div>
               <p className="membershipStatTitle">

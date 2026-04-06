@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { InstagramCollage } from './InstagramCollage';
 
@@ -53,6 +56,8 @@ function ArrowIcon() {
 }
 
 export function StoriesSection() {
+  const [activeTab, setActiveTab] = useState<'socials' | 'newsroom'>('socials');
+
   return (
     <section className="section storiesSection1">
       <div className="header storiesSection1Header">
@@ -64,13 +69,13 @@ export function StoriesSection() {
 
         {/* Tabs */}
         <div className="tabs">
-          <div className="glass tab is-selected">
-            <button type="button" className="tabButton">
+          <div className={`glass tab ${activeTab === 'socials' ? 'is-selected' : ''}`}>
+            <button type="button" className="tabButton" onClick={() => setActiveTab('socials')}>
               <span className="tabText">Socials</span>
             </button>
           </div>
-          <div className="glass tab">
-            <button type="button" className="tabButton">
+          <div className={`glass tab ${activeTab === 'newsroom' ? 'is-selected' : ''}`}>
+            <button type="button" className="tabButton" onClick={() => setActiveTab('newsroom')}>
               <span className="tabText">Newsroom</span>
             </button>
           </div>
@@ -79,7 +84,7 @@ export function StoriesSection() {
 
       <div className="panels">
         {/* Socials Panel */}
-        <div className="panel" id="panel-socials">
+        <div className="panel" id="panel-socials" hidden={activeTab !== 'socials'}>
           <div className="panelContainer">
             <div className="panelContent">
               {/* Social icons row */}
@@ -119,7 +124,7 @@ export function StoriesSection() {
         </div>
 
         {/* Newsroom Panel */}
-        <div className="panel" id="panel-newsroom" hidden>
+        <div className="panel" id="panel-newsroom" hidden={activeTab !== 'newsroom'}>
           <div className="panelContainer">
             <div className="panelContent" style={{ maxWidth: '1200px', width: '100%' }}>
               {/* News Section */}

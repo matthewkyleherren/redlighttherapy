@@ -885,6 +885,7 @@ export function FoundersAnimations() {
     let timeline: Timeline | null = null;
     let overlayPlayer: OverlayPlayer | null = null;
     let cleanupVideoButtons: (() => void) | null = null;
+    let libs: (AnimationLibs & { dispose?: () => void }) | null = null;
 
     async function init() {
       // Check for reduced motion
@@ -897,7 +898,7 @@ export function FoundersAnimations() {
         await Promise.race([document.fonts.ready, new Promise<void>((r) => setTimeout(r, 3000))]);
       }
 
-      const libs = await initAnimationLibs();
+      libs = await initAnimationLibs();
 
       overlayPlayer = setupVideoPlayerOverlay(libs);
       if (overlayPlayer) {
@@ -914,6 +915,7 @@ export function FoundersAnimations() {
       timeline?.dispose();
       overlayPlayer?.dispose();
       cleanupVideoButtons?.();
+      libs?.dispose?.();
     };
   }, []);
 

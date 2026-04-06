@@ -8,7 +8,7 @@ export function Section1() {
   return (
     <div
       id="section1"
-      className="section section1"
+      className="section section1 homeSection1"
       style={{
         '--section1-poster-url': `url('/api/mux-poster/${SECTION_1_VIDEO_PLAYBACK_ID_MOBILE}/index_time=0.webp')`,
       } as React.CSSProperties}
